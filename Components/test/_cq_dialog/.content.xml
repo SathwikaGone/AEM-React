@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+xmlns:granite="http://www.adobe.com/jcr/granite/1.0" 
+xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Multi ShowHide Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem6_3_docs_component_en#Image - HTL"
+    extraClientlibs="[cq.authoring.dialog]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <multi
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Multi"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <custom
+                        jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/heading"
+                                class="coral-Heading coral-Heading--4"
+                                level="{Long}4"
+                                text="Composite Multifield"/>
+                            <well
+                                jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/container">
+                                <layout
+                                    jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                                <items jcr:primaryType="nt:unstructured">
+                                    <fieldenter
+                                        jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        composite="{Boolean}true">
+                                        <field
+                                            jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/container"
+                                            fieldLabel="Products Container"
+                                            name="./products">
+      <items jcr:primaryType="nt:unstructured">
+                                            <listFromMulti
+      granite:class="cq-dialog-dropdown-showhide1"
+                                            jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Select Multi showhide"
+                                            name="listFromMulti">
+      <items jcr:primaryType="nt:unstructured">
+                                            <text
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Text field"
+                                            value="textval"/>
+                                            <num
+                                            jcr:primaryType="nt:unstructured"
+                                            text="Num field"
+                                            value="numval"/>
+                                            </items>
+                                            <granite:data
+                                            jcr:primaryType="nt:unstructured"
+      cq-dialog-dropdown-showhide-target1=".list-option-listfrom-showhide-target1"/>
+                                            </listFromMulti>
+                                            <multitext
+      granite:class="list-option-listfrom-showhide-target1"
+                                            jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                              fieldLabel="Multi Text"
+                                              name="multitext"
+                                              showhidetargetvalue="textval">
+                                              <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                showhidetargetvalue="textval"/>
+                                              </multitext>
+                                              <multinum
+      granite:class="list-option-listfrom-showhide-target1"
+                                              jcr:primaryType="nt:unstructured"
+      sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                              fieldLabel="Multi Num"
+                                               name="multinum"
+                                               showhidetargetvalue="numval">
+                                               <granite:data
+                                               jcr:primaryType="nt:unstructured"
+                                               showhidetargetvalue="numval"/>
+                                               </multinum>
+                                            </items>
+                                        </field>
+                                    </fieldenter>
+                                </items>
+                            </well>
+                        </items>
+                    </custom>
+                </items>
+            </multi>
+        </items>
+    </content>
+</jcr:root>
